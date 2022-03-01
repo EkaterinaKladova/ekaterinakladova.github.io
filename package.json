@@ -1,0 +1,15 @@
+{
+  "name": "ouruniverse",
+  "version": "1.0.0",
+  "description": "OurUniverse is a Social Media app for pets, pet owners, and pet lovers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^9.6.7"
+  }
+}
