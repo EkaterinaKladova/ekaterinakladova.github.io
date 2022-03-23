@@ -6,13 +6,12 @@ html {
 	background-repeat: no-repeat;
 	background-size: 100000px 100000px;
 	line-height: 3vh;
+	height: 120%;
 }
 body {
-	
 	margin-top: 9%;
-	max-height: 50%;
-	/*overflow: hidden;*/
-	/*0 is red, 120 is green, and 240 is blue; amount of color; lightness (50% is normal)*/
+	height: auto;
+	padding-bottom: 70%;
 }
 
 header {

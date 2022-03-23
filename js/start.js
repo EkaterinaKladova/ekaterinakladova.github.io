@@ -87,14 +87,13 @@ function resetPass() {
 		alert("Please try again with a valid username");
 }
 
-function createform() { //In beta, not really working yet
+function spawnPosts() { 
 	// Create element:
-	const para = document.createElement("form");
-	para.innerHTML = "Please enter your username";
-	// Append to another element:
-	document.getElementById("myDIV").appendChild(para);
-	document.getElementById("myDIV").appendChild(document.createElement("input"));
-	//document.getElementById("myDIV").appendChild(document.getElementById("register_box"));
+	for (var i=0; i < 5; i++) {
+		var clone = document.querySelectorAll(".post")[0].cloneNode(true);
+		clone.removeAttribute("hidden");
+		document.querySelectorAll(".feed")[0].appendChild(clone);
+	}
 }
 
 function confirmation() {

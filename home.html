@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<htmls>
 <head>
 	<title>Our Universe</title>
 	<link rel="stylesheet" href="css/default.css">
 	<link rel="stylesheet" href="css/home.css">
-	<script src="js/start.js"></script>
+	<script type="text/javascript" src="js/start.js"></script>
 	<link rel="icon" type="image/x-icon" href="images/page_icon.png">
 	<html lang="en-US" dir="ltr">
 	<meta charset="utf-8"> 
@@ -14,35 +14,35 @@
 <header> 
 	<h1>Hello!</h1>
 </header>
-<body>
+<body onload="spawnPosts();">
 	<aside id="side_menu"> 
 		<p>Menu</p>
 		<ul id="menu_list">
 			<li><a href="CreatePost.html"><img src="images/post_icon.png") width=13% height=13%> Create Post</li></a>
 			<li><a href="FriendsList.html"><img src="images/friends_icon.png" width=13% height=13%> Friends List</li></a>
 			<li><a href="Account.html"><img src="images/account_icon.png") width=13% height=13%> Account</li></a>
-			<!-- <li><a href="start.html"><img src="images/logout_icon.png") width=13% height=13%> Logout</li></a> -->
 			<li><button onclick="confirmation()"><img src="images/logout_icon.png") width=13% height=13%> Logout</li></a>
 		</ul>
 	</aside>
 	<section id="posts_feed">
-		<div class="post">
+	<div class="feed">
+		<div class="post" id="test_post" hidden>
 			<p><img src="images/page_icon.png" class="post_user_img">
 			<span class="post_user"> Friend's 1 Name </span><br>
 			<div class="post_content">Example of a creative post</div>
-			<button type="button" name="like">Like</button>
+			<button type="button" name="like"">Like</button>
 			<button type="button" name="comment">Comment</button>
-			
 			</p>
 		</div>
-		<div class="post">
+		<!-- <div class="post">
 			<p><img src="images/friends_icon.png" width=34px height=34px style="float:left;">
 			<span class="post_user"> Friend's 1 Name </span><br>
 			<div class="post_content">Example of a creative post</div>
 			<button type="button" name="like">Like</button>
 			<button type="button" name="comment">Comment</button>
 			</p>
-		</div>
+		</div> -->
+	</div>
 	</section>
 	<aside id="friends_menu">
 		<ul id="friend_list_aside">
