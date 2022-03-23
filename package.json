@@ -1,0 +1,28 @@
+{
+  "name": "ekaterinakladova.github.io",
+  "version": "1.0.0",
+  "description": "\"Creation of Node.js to run server\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klopez11/ekaterinakladova.github.io.git"
+  },
+  "author": "Kevin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klopez11/ekaterinakladova.github.io/issues"
+  },
+  "homepage": "https://github.com/klopez11/ekaterinakladova.github.io#readme",
+  "keywords": [],
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
