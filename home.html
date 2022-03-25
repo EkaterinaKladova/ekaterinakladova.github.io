@@ -4,7 +4,9 @@
 	<title>Our Universe</title>
 	<link rel="stylesheet" href="css/default.css">
 	<link rel="stylesheet" href="css/home.css">
+	<script type="text/javascript" src="js/default.js"></script>
 	<script type="text/javascript" src="js/start.js"></script>
+	<script type="text/javascript" src="js/home.js"></script>
 	<link rel="icon" type="image/x-icon" href="images/page_icon.png">
 	<html lang="en-US" dir="ltr">
 	<meta charset="utf-8"> 
@@ -14,7 +16,7 @@
 <header> 
 	<h1>Hello!</h1>
 </header>
-<body onload="spawnPosts();">
+<body onload="spawnPosts();spawnFriends();">
 	<aside id="side_menu"> 
 		<p>Menu</p>
 		<ul id="menu_list">
@@ -34,34 +36,23 @@
 			<button type="button" name="comment">Comment</button>
 			</p>
 		</div>
-		<!-- <div class="post">
-			<p><img src="images/friends_icon.png" width=34px height=34px style="float:left;">
-			<span class="post_user"> Friend's 1 Name </span><br>
-			<div class="post_content">Example of a creative post</div>
-			<button type="button" name="like">Like</button>
-			<button type="button" name="comment">Comment</button>
-			</p>
-		</div> -->
 	</div>
+	<button onclick="loadLessPosts();">Load Previous</button>
+	<button onclick="loadMorePosts();">Load more</button>
 	</section>
 	<aside id="friends_menu">
-		<ul id="friend_list_aside">
-		<li class="friend_list_item">
-		<div class="friend_m"> <!-- m is short for menu, but put just an m to not be confused with friends_menu-->
+		<ul class="friend_list_aside">
+		<li class="friend_list_item" hidden> <!-- hidden hides template-->
+ 		<div class="friend_m"> <!-- m is short for menu, but put just an m to not be confused with friends_menu-->
 			<p><img src="images/page_icon.png"  style="float:left;height: 2.3vh;"><nobr>
 			<span> Friend 1's Name  </span><nobr>
 			<button class="button_style1" type="button" name="visit">Visit</button></nobr>
 			</p>
 		</div>
-		</li><li class="friend_list_item">
-		<div class="friend_m">
-			<p><img src="images/friends_icon.png" style="float:left;height: 2.3vh;">
-			<span> Friend 2's Name  </span><nobr>
-			<button class="button_style1" type="button" name="visit">Visit</button></nobr>
-			</p>
-		</div>
 		</li>
 		</ul>
+		<button onclick="loadLessFriends();">Load Previous</button>
+		<button onclick="loadMoreFriends();">Load Next</button>
 	</aside>
 	<footer>
 		<a href="documents/legal.txt" target="_blank">Legal Information</a>

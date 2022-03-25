@@ -10,7 +10,7 @@
 	background-color: hsl(40,65%,100%);
 }
 
-.post {
+.post, .new_post {
 	margin: 1vh 1vw;
 	padding: 1vw;
 	border: .2vw outset orange;

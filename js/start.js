@@ -87,17 +87,3 @@ function resetPass() {
 		alert("Please try again with a valid username");
 }
 
-function spawnPosts() { 
-	// Create element:
-	for (var i=0; i < 5; i++) {
-		var clone = document.querySelectorAll(".post")[0].cloneNode(true);
-		clone.removeAttribute("hidden");
-		document.querySelectorAll(".feed")[0].appendChild(clone);
-	}
-}
-
-function confirmation() {
-	if (confirm("Are you sure you want to log out?") == true) {
-		window.location.replace('start.html');
-	}
-} 
