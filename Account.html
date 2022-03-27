@@ -26,26 +26,26 @@
 		<ul id="menu_list">
 			<li><a href="home.html"><img src="images/home_icon.png" width=13% height=13%> Back Home</li></a>
 			<li><a href="FriendsList.html"><img src="images/friends_icon.png" width=13% height=13%> Friends List</li></a>
-			<li><a href="CreatePost.html"><img src="images/post_icon.png") width=13% height=13%> Create a Post</li>
-			<li><button onclick="confirmation()"><img src="images/logout_icon.png") width=13% height=13%> Logout</li></a>
+			<li><a href="CreatePost.html"><img src="images/post_icon.png") width=13% height=13%> Create a Post</li></a>
+			<li><a href="index.html"><button onclick="confirmation()"><img src="images/logout_icon.png") width=13% height=13%> Logout</li></a>
 		</ul>
 	</aside>
-	<form class="form" id="account_form" action="Account.html" method="get">
+	<form class="form" id="account_form">
 	<h3>Account Information</h3>
 		<label>Nickname:<br>
-			<input name="nickname" type="text"  placeholder="Po the Panda" required><br>
+			<input id="name" name="nickname" type="text"  placeholder="Po the Panda" required><br>
 		</label> 
 		<br>
 		<label>Location:<br>
-			<input name="location" type="text"  required><br>
+			<input id="location" name="location" type="text"  required><br>
 		</label>
 		<br>
 		<label>Breed/Type:<br>
-			<input name="type" type="text"  required><br>
+			<input id="type" name="type" type="text"  required><br>
 		</label>
 		<br>
 		<label>Age:<br>
-			<input name="age" type="number" required><br>
+			<input id="age" name="age" type="number" required><br>
 		</label>
 		<!-- We can add a link to the account reset or update account password here -->
 		<br>
@@ -57,9 +57,6 @@
 		<!-- <button type="submit" form="image_form" style="float: right;">Upload</button> -->
 		</label>
 		<button class="form_submit" type="submit">Submit</button>
-	</form>
-	
-	<form action="/action_page.php" id="image_form">
 	</form>
 
 	<form class="form" id= "funfacts_form" action="Account.html" method="get">
@@ -105,6 +102,64 @@
 		</ul>
 	</aside>
 	
+	
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+	
+	<script>
+		const firebaseConfig = {
+			apiKey: "AIzaSyCfTkra5djZesE-OTSqIzB6lgx3X09oZZg",
+			authDomain: "ouruniverse-29e79.firebaseapp.com",
+			databaseURL: "https://ouruniverse-29e79-default-rtdb.firebaseio.com",
+			projectId: "ouruniverse-29e79",
+			storageBucket: "ouruniverse-29e79.appspot.com",
+			messagingSenderId: "1073119494568",
+			appId: "1:1073119494568:web:c5744028fee2df7a101d9d",
+			measurementId: "G-QKW60JL836"
+		};
+		
+		var app = firebase.initializeApp(firebaseConfig);
+		const db = firebase.firestore(app);
+		
+		
+		/*
+		firebase.auth().onAuthStateChanged((user) => {
+			if (user) {
+				// User is signed in, see docs for a list of available properties
+				// https://firebase.google.com/docs/reference/js/firebase.User
+			var uid = user.uid;
+			// ...
+			} else {
+			// User is signed out
+			// ...
+			}
+		});
+		*/
+		document.getElementById('account_form')
+			.addEventListener('submit', submitForm);
+		
+		function submitForm(e){
+			e.preventDefault;
+			
+			var infoData = {
+				localNickname: document.getElementById('name').value,
+			    localLocation: document.getElementById('location').value,
+			    localType: document.getElementById('type').value,
+			    localAge: document.getElementById('age').value
+			}
+			
+			db.collection("Users").doc("sejV3H0i3YQxwjL31GgqJhXFEOu2").set(infoData)
+			.then(() => {
+				console.log("Document successfully written!");
+			})
+			.catch((error) => {
+				console.error("Error writing document: ", error);
+			});
+			document.getElementById('account_form').reset();
+		}
+	
+	</script>
 	<footer>
 		<a href="documents/legal.txt" target="_blank">Legal Information</a>
 	</footer>
