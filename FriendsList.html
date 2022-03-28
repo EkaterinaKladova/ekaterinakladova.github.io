@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="css/default.css">
 	<link rel="stylesheet" href="css/FriendsList.css">
 	<script type="text/javascript" src="js/default.js"></script>
+	<script type="text/javascript" src="js/FriendsList.js"></script>
 	<link rel="icon" type="image/x-icon" href="images/page_icon.png">
 	<html lang="en-US" dir="ltr">
 	<meta charset="utf-8">
@@ -16,23 +17,20 @@
 		<h1>Friends List</h1>
 </header>
 
-<body>
+<body onload="spawnFriends();spawnMainFriends();">
 <div id="wrapper">
 	<section id="friends_list">
-		<div class="friend">
+		<div class="friends_list">
+		<div class="friend" hidden>
 			<p><img src="images/page_icon.png" width=34px height=34px style="float:left;">
 			<span style="font-size:34px;margin-left:25px;"> Friend's 1 Name  </span>
 			<button type="button" name="remove_friend" class="FL_button">Remove Friend</button>
 			<button type="button" name="block_friend" class="FL_button">Block Friend</button>
 			</p>
 		</div>
-		<div class="friend">
-			<p><img src="images/friends_icon.png" width=34px height=34px style="float:left;">
-			<span style="font-size:34px;margin-left:25px;"> Friend's 2 Name  </span>
-			<button type="button" name="remove_friend" class="FL_button">Remove Friend</button>
-			<button type="button" name="block_friend" class="FL_button">Block Friend</button>
-			</p>
 		</div>
+		<button onclick="loadLessMainFriends();">Load Previous</button>
+		<button onclick="loadMoreMainFriends();">Load Next</button>
 	</section>
 	<aside id="side_menu"> 
 		<p>Menu</p>
@@ -40,28 +38,23 @@
 			<li><a href="home.html"><img src="images/home_icon.png" width=13% height=13%> Back Home</li></a>
 			<li><a href="CreatePost.html"><img src="images/post_icon.png" width=13% height=13%> Create Post</li></a>
 			<li><a href="Account.html"><img src="images/account_icon.png" width=13% height=13%> Account</li></a>
-			<!-- <li><a href="start.html"><img src="images/logout_icon.png") width=13% height=13%> Logout</li></a> -->
 			<li><button onclick="confirmation()"><img src="images/logout_icon.png") width=13% height=13%> Logout</li></a>
+			<!-- adding href to button always goes to index.html, while confirmation() only goes to index.html if the user confirms-->
 		</ul>
 	</aside>
 	<aside id="friends_menu">
-		<ul id="friend_list_aside">
-		<li class="friend_list_item">
-		<div class="friend_m"> <!-- m is short for menu, but put just an m to not be confused with friends_menu-->
+		<ul class="friend_list_aside">
+		<li class="friend_list_item" hidden> <!-- hidden hides template-->
+ 		<div class="friend_m"> <!-- m is short for menu, but put just an m to not be confused with friends_menu-->
 			<p><img src="images/page_icon.png"  style="float:left;height: 2.3vh;"><nobr>
 			<span> Friend 1's Name  </span><nobr>
 			<button class="button_style1" type="button" name="visit">Visit</button></nobr>
 			</p>
 		</div>
-		</li><li class="friend_list_item">
-		<div class="friend_m">
-			<p><img src="images/friends_icon.png" style="float:left;height: 2.3vh;">
-			<span> Friend 2's Name  </span><nobr>
-			<button class="button_style1" type="button" name="visit">Visit</button></nobr>
-			</p>
-		</div>
 		</li>
 		</ul>
+		<button onclick="loadLessFriends();">Load Previous</button>
+		<button onclick="loadMoreFriends();">Load Next</button>
 	</aside>
 	<footer>
 		<a href="documents/legal.txt" target="_blank">Legal Information</a>

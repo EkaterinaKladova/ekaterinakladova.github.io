@@ -14,15 +14,15 @@
 <header> 
 	<h1>Create Your Post!</h1>
 </header>
-<body>
+<body onload="spawnFriends();">
 	<aside id="side_menu"> 
 		<p>Menu</p>
 		<ul id="menu_list">
 			<li><a href="home.html"><img src="images/home_icon.png" width=13% height=13%> Back Home</li></a>
 			<li><a href="FriendsList.html"><img src="images/friends_icon.png" width=13% height=13%> Friends List</li></a>
 			<li><a href="Account.html"><img src="images/account_icon.png" width=13% height=13%> Account</li></a>
-			<!-- <li><a href="start.html"><img src="images/logout_icon.png") width=13% height=13%> Logout</li></a> -->
 			<li><button onclick="confirmation()"><img src="images/logout_icon.png") width=13% height=13%> Logout</li></a>
+			<!-- adding href to button always goes to index.html, while confirmation() only goes to index.html if the user confirms-->
 		</ul>
 	</aside>
 	<section id="create_post">
@@ -40,24 +40,19 @@
 			
 		</form>
 	</section>
-	<aside id="friends_menu">
-		<ul id="friend_list_aside">
-		<li class="friend_list_item">
-		<div class="friend_m"> <!-- m is short for menu, but put just an m to not be confused with friends_menu-->
+	<<aside id="friends_menu">
+		<ul class="friend_list_aside">
+		<li class="friend_list_item" hidden> <!-- hidden hides template-->
+ 		<div class="friend_m"> <!-- m is short for menu, but put just an m to not be confused with friends_menu-->
 			<p><img src="images/page_icon.png"  style="float:left;height: 2.3vh;"><nobr>
 			<span> Friend 1's Name  </span><nobr>
 			<button class="button_style1" type="button" name="visit">Visit</button></nobr>
 			</p>
 		</div>
-		</li><li class="friend_list_item">
-		<div class="friend_m">
-			<p><img src="images/friends_icon.png" style="float:left;height: 2.3vh;">
-			<span> Friend 2's Name  </span><nobr>
-			<button class="button_style1" type="button" name="visit">Visit</button></nobr>
-			</p>
-		</div>
 		</li>
 		</ul>
+		<button onclick="loadLessFriends();">Load Previous</button>
+		<button onclick="loadMoreFriends();">Load Next</button>
 	</aside>
 	<footer>
 		<a href="documents/legal.txt" target="_blank">Legal Information</a>
