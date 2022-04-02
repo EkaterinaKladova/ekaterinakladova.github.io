@@ -1,4 +1,4 @@
-//Referenec to Firebase Auth SDK - Gives us methods to manage users within app.
+//Referenence to Firebase Auth SDK - Gives us methods to manage users within app.
 const auth = firebase.auth();
 
 //Grab HTML elements to interact with.
