@@ -14,6 +14,7 @@ function spawnPosts() {
 		clone.setAttribute("id", `new_post${post_counter}`);
 		//appends the new instance of the class to feed
 		document.querySelectorAll(".feed")[0].appendChild(clone);
+		document.querySelector(`#new_post${post_counter} span`).innerHTML = `Friend ${post_counter}`;
 		post_counter ++;
 	}
 	for (i= 5; i < numPosts; i++) {
@@ -24,8 +25,10 @@ function spawnPosts() {
 		clone.setAttribute("id", `new_post${post_counter}`);
 		//appends the new instance of the class to feed
 		document.querySelectorAll(".feed")[0].appendChild(clone);
+		document.querySelector(`#new_post${post_counter} span`).innerHTML = `Friend ${post_counter}`;
 		post_counter ++;
 	}
+	//document.querySelector(`#new_post2 span`).innerHTML = `Friend 3`;
 	post_counter = Math.min(5,numPosts);
 }
 
