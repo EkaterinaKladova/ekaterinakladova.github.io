@@ -25,6 +25,7 @@ function spawnPosts() {
 		clone.setAttribute("id", `new_post${post_counter}`);
 		//appends the new instance of the class to feed
 		document.querySelectorAll(".feed")[0].appendChild(clone);
+		//the next line allows us to select parts of the clone and update them, in this instance which friend it is
 		document.querySelector(`#new_post${post_counter} span`).innerHTML = `Friend ${post_counter}`;
 		post_counter ++;
 	}

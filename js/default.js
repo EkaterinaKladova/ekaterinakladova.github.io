@@ -18,6 +18,7 @@ function spawnFriends() {
 		clone.setAttribute("id", `new_friend${friend_counter}`);
 		//appends the new instance of the class to feed
 		document.querySelectorAll(".friend_list_aside")[0].appendChild(clone);
+		document.querySelector(`#new_friend${friend_counter} span`).innerHTML = `Friend ${friend_counter}`;
 		friend_counter ++;
 	}
 	for (i= friends_per_page; i < number_of_friends; i++) {
@@ -28,6 +29,7 @@ function spawnFriends() {
 		clone.setAttribute("id", `new_friend${friend_counter}`);
 		//appends the new instance of the class to feed
 		document.querySelectorAll(".friend_list_aside")[0].appendChild(clone);
+		document.querySelector(`#new_friend${friend_counter} span`).innerHTML = `Friend ${friend_counter}`;
 		friend_counter ++;
 	}
 	friend_counter = Math.min(friends_per_page,number_of_friends);
@@ -57,7 +59,8 @@ function loadMoreFriends() {
 
 function loadLessFriends() {
 	onPage = friend_counter%friends_per_page;
-	if (friend_counter < (number_of_friends + 1)) {
+	console.log(`${number_of_friends} and ${friend_counter}`)
+	if (friend_counter < (number_of_friends)) {
 		alert("No more previous friends");
 	} else if (onPage == 0) {
 		for (i = 0; i < friends_per_page; i++) {

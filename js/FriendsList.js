@@ -13,6 +13,7 @@ function spawnMainFriends() {
 		clone.setAttribute("id", `main_friend${main_friend_counter}`);
 		//appends the new instance of the class to feed
 		document.querySelectorAll(".friends_list")[0].appendChild(clone);
+		document.querySelector(`#main_friend${main_friend_counter} span`).innerHTML = `Friend ${main_friend_counter}`;
 		main_friend_counter ++;
 	}
 	for (i= main_friends_per_page; i < number_of_main_friends; i++) {
@@ -23,6 +24,7 @@ function spawnMainFriends() {
 		clone.setAttribute("id", `main_friend${main_friend_counter}`);
 		//appends the new instance of the class to feed
 		document.querySelectorAll(".friends_list")[0].appendChild(clone);
+		document.querySelector(`#main_friend${main_friend_counter} span`).innerHTML = `Friend ${main_friend_counter}`;
 		main_friend_counter ++;
 	}
 	main_friend_counter = Math.min(main_friends_per_page,number_of_main_friends);
