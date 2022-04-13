@@ -7,13 +7,11 @@
 	<link rel="stylesheet" href="css/start.css">
 	<link rel="icon" type="image/x-icon" href="images/page_icon.png">
 	<script type="text/javascript" src="js/default.js"></script>
-	<script type ="module" src="js/start.js"></script>
+	<!-- <script type ="module" src="js/start.js"></script>-->
 	<html lang="en-US" dir="ltr">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Login page for Our Universe">
-	<script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
-	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
 </head>
 
 <header>
@@ -42,7 +40,7 @@
 		<aside>
 		<div id="register_box"> 
 			<p>Please register below:</p>
-			<form action="home.html" method="get">
+			<form action="home.html" method="get" id="signup_form">
 				<label >Username<br>
 				<input  name="username" placeholder="Ex. Rocket84" required><br>
 				</label>
@@ -57,6 +55,9 @@
 		</div>
 	</div>
 	</aside>
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 	<script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
@@ -78,8 +79,41 @@
   };
 
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+  const app = firebase.initializeApp(firebaseConfig);
+	
+  const loginform = document.querySelector('#login_form');
+	const signupform = document.querySelector('#signup_form')
+
+
+	signupform.addEventListener('submit', (e) => {
+		//Create Account
+	firebase.auth().createUserWithEmailAndPassword(signupform.username.value, signupform.password.value)
+  	.then((userCredential) => {
+    // Signed in 
+    var user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ..
+  });
+  signupform.reset();
+});
+
+	loginform.addEventListener('submit', (e) => {
+	firebase.auth().signInWithEmailAndPassword(loginform.username.value, loginform.password.value)
+  .then((userCredential) => {
+    // Signed in
+    var user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
+  	loginform.reset();
+	});
 </script>
 	<footer>
 		<a href="documents/legal.txt" target="_blank">Legal Information</a>

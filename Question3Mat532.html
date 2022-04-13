@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="A simple, embeddable interface for SageMath">
+<title>Sage Cell Server</title>
+<link rel="icon" href="/static/favicon.ico?v=9262f0390b9101f9a3db55ef91ec27c50262ba2a51b417bdc113eb8ed27585fa5fc4ba69d2506ceafb2a6c501f9aec9afdee29b4f980f7443ff351dbb053552d">
+<script src="/static/embedded_sagecell.js?v=b15f21baaf8403575aee48e0c92dd273c996c5d51c90581bef088e34ad90903bad8008dfcce88791f8043460e2783e9ef385b85b5f3fac8d4d7d1dc7c5ad0d2f"></script>
+</head>
+<body id="sagecell_main">
+<link rel="stylesheet" href="/static/root.css?v=bc83d7d0f0331bce51a33e858ab8f4bf361420b132a08936b3e45441c74ac683eee04c5b763b754ae8925159c929f7a355d13d3f6b4b78f9e9c42018bd96bb8a">
+<h1><img src="/static/sagemathcell-logo.png?v=6e2af643d466a112eaeab1d2e21285b1707a5b3b8991f190583c5603ef4914df0611e9132b1180a8ff88523392cce6d19886336b8aad1706d3b357c8d5ac3800" alt="SageMathCell"></h1>
+Type some Sage code below and press Evaluate.
+<div id="cell"></div>
+<a href="/static/about.html?v=0141c2bee781881e735b5e98a913a0de5f2b2efc011158c7627de0318c02f6cc569f07beefc2eca4bdba7e55ec59235a4ba78ce37797ae52d0978386182bd413" id="sagecell_about" target="_blank">About SageMathCell</a>
+<script>
+sagecell.makeSagecell({
+inputLocation: '#cell',
+languages: sagecell.allLanguages,
+
+
+
+//Focus the editor
+callback: function() {$('#cell').find(".CodeMirror").get(0).CodeMirror.focus();}
+});
+</script>
+ <h1>About</h1>
+<p><a href="https://github.com/sagemath/sagecell">SageMathCell</a> project is an easy-to-use web interface to a free open-source mathematics software system <a href="https://www.sagemath.org">SageMath</a>. You can help SageMath by becoming a <iframe src="https://github.com/sponsors/sagemath/button" title="Sponsor sagemath" height="35" width="116" style="border: 0; vertical-align: middle;"></iframe>.</p>
+<p>It allows <strong>embedding Sage computations into any webpage</strong>: check out our <a href="/static/about.html?v=0141c2bee781881e735b5e98a913a0de5f2b2efc011158c7627de0318c02f6cc569f07beefc2eca4bdba7e55ec59235a4ba78ce37797ae52d0978386182bd413">short instructions</a>, a <a href="https://github.com/sagemath/sagecell/blob/master/doc/embedding.rst">comprehensive description of capabilities</a>, or <a href="https://dahn-research.eu/nbplayer/">Notebook Player</a> to <strong>convert Jupyter notebooks into dynamic HTML pages!</strong></p>
+<p>
+Resources for your computation are provided by <a href="http://sagemath.com">SageMath, Inc.</a>.
+ You can also <a href="https://github.com/sagemath/sagecell/tree/master/contrib/vm/README.md">set up your own server</a>.</p>
+<h1>General Questions on Using Sage</h1>
+<p>There are <a href="https://www.sagemath.org/help.html">a lot of resources</a> available to help you use Sage. In particular, you may ask questions on <a href="http://groups.google.com/group/sage-support">sage-support</a> discussion group or <a href="http://ask.sagemath.org/questions/">ask.sagemath.org</a> website.</p>
+<h1>Problems and Suggestions</h1>
+<p style="border:3px; border-style:solid; border-color:#FF0000; padding: 0.5em;">Unfortunately, we can no longer allow user code in cells to freely access Internet. See <a href="https://groups.google.com/g/sage-cell/c/ETeONQMYbQM/m/Tzl-rFmkAQAJ">this discussion</a> for details.</p>
+<p>If you experience any problems or have suggestions on improving this service (e.g., you want a package installed), please email <a href="/cdn-cgi/l/email-protection#dfb1b0a9b0acbab3ab9fb8b2beb6b3f1bcb0b2e08caabdb5babcabe28cbeb8ba92beabb79cbab3b3">Andrey Novoseltsev</a>.</p>
+<p>SageMathCell is expected to work with any modern browser and without any downtime.</p>
+<h1><a href="https://cocalc.com/" target="_blank"><img src="/static/cocalc-logo-horizontal.png?v=2fa5cf30525319cf4fabaf03c4fb54ed743cb937eb2431b5cc5d057ce621c2793a7d00db31f5214621610204f2eee4c1d2f454541395bf6e5147c8bde8e554d9" alt="CoCalc"></a></h1>
+<p>Need more power and flexibility but still prefer to avoid your own installation of Sage? <a href="https://cocalc.com/" target="_blank">CoCalc</a> will allow you to work with multiple persistent worksheets in Sage, IPython, LaTeX, and much, much more!</p>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
