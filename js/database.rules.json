@@ -1,5 +1,6 @@
 {
   /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  /* These rules are not secure, but allow for easier development */
   "rules": {
     ".read": false,
     ".write": false
