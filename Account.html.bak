@@ -16,10 +16,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Home page for Our Universe">
 </head>
+
 <header> 
 	<h1>Account Settings</h1>
 </header>
+
 <body style="margin-left:8px;">
+
+	<!-- Side Menu-->
 	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	--><aside id="side_menu"> 
 		<p>Menu</p>
@@ -30,6 +34,7 @@
 			<li><a href="index.html"><button onclick="confirmation()"><img src="images/logout_icon.png") width=13% height=13%> Logout</li></a>
 		</ul>
 	</aside>
+	
 	<form class="form" id="account_form">
 	<h3>Account Information</h3>
 		<label>Nickname:<br>
@@ -139,6 +144,7 @@
 		document.getElementById('account_form')
 			.addEventListener('submit', submitForm);
 		
+		<!-- Sends inputs to the database-->
 		function submitForm(e){
 			e.preventDefault;
 			
