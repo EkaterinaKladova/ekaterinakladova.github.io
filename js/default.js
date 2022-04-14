@@ -57,6 +57,7 @@ function loadMoreFriends() {
 	}
 }
 
+// going backwards from loadMoreFriends()
 function loadLessFriends() {
 	onPage = friend_counter%friends_per_page;
 	console.log(`${number_of_friends} and ${friend_counter}`)
