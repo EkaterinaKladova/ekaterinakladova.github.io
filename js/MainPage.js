@@ -5,6 +5,8 @@ var serviceAccount = require("path/to/serviceAccountKey.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
+
+// processing inputs and logging in
 function login(){
     const username = document.getElementById("login-user").value.toLowerCase().trim();
     
