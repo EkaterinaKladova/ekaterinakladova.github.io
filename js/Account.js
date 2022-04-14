@@ -1,3 +1,4 @@
+// account settings functions
 const form1 = document.querySelector('#account_form');
 const form2 = document.querySelector('#funfacts_form');
 var AccInfoRef = db.collection("Users").doc("sejV3H0i3YQxwjL31GgqJhXFEOu2");
@@ -5,6 +6,7 @@ var funFactsRef = AccInfoRef.collection("funFacts").doc('1234');
 
 //var test = getAccInfo();
 		
+// account info
 form1.addEventListener('submit', (e) => {
 	e.preventDefault();
 	AccInfoRef.set({
@@ -17,7 +19,7 @@ form1.addEventListener('submit', (e) => {
 	setTimeout( function() { update(); }, 1000);
 });
 
-
+// fun facts
 form2.addEventListener('submit', (e) => {
 	e.preventDefault();
 	funFactsRef.set({
