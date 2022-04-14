@@ -1,5 +1,6 @@
 /**
  * index.js
+ * a sample code file, not really part of the project
  */
  const express = require("express");
  const cors = require("cors");
